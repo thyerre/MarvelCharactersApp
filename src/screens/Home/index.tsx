@@ -6,12 +6,12 @@ import { Container } from './styles';
 export function Home() {
   const navigation = useNavigation();
 
-  function handleNavigateToHome2() {
+  function handleNavigateToDetail() {
     navigation.navigate('Detail');
   }
   return (
     <Container>
-      <TouchableOpacity onPress={handleNavigateToHome2}>
+      <TouchableOpacity onPress={handleNavigateToDetail}>
         <Text>Home</Text>
       </TouchableOpacity>
     </Container>
