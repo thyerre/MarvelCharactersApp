@@ -9,7 +9,6 @@ export function SplashPage() {
   useEffect(() => {
     console.log(avengers);
     setAvengers({ name: 'Thyerre1' });
-    console.log(avengers);
   }, []);
 
   return (
