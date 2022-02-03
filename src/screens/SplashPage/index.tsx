@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
+
 import { useAvengers } from '../../hooks/useAvengers';
 import { ImageLogo, SplashContainer } from './styles';
 
 export function SplashPage() {
-  const { avengers, setAvengers } = useAvengers();
+  const { avengers } = useAvengers();
+  const navigation = useNavigation();
 
   useEffect(() => {
-    console.log(avengers);
-    setAvengers({ name: 'Thyerre1' });
-  }, []);
+    if (avengers.length > 0) {
+      navigation.navigate('Home');
+    }
+  }, [avengers]);
 
   return (
     <SplashContainer>

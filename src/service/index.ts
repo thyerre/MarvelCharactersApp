@@ -1,7 +1,7 @@
 import { httpApi } from '../api';
 
-export function getAvengers() {
-  return httpApi.get('thyerre').then(response => {
-    console.log(response.data);
-  });
+export async function getAvengers() {
+  return await httpApi
+    .get('/characters')
+    .then(({ data }: any) => data.data.results);
 }
