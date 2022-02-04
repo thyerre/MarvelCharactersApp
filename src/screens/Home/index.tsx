@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import { Container } from './styles';
+import { StatusBar, TouchableOpacity } from 'react-native';
+import { ListCard } from '../../components/ListCard';
+import { Container, ContentHeader, TextTeste } from './styles';
 
 export function Home() {
   const navigation = useNavigation();
@@ -11,8 +12,20 @@ export function Home() {
   }
   return (
     <Container>
+      <StatusBar
+        barStyle="light-content"
+        hidden={false}
+        backgroundColor="#181a20"
+        translucent={false}
+        networkActivityIndicatorVisible={true}
+      />
+
+      <ContentHeader>
+        <ListCard />
+      </ContentHeader>
+
       <TouchableOpacity onPress={handleNavigateToDetail}>
-        <Text>Home</Text>
+        <TextTeste>Home</TextTeste>
       </TouchableOpacity>
     </Container>
   );
