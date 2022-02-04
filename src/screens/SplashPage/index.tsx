@@ -20,7 +20,7 @@ export function SplashPage() {
       <StatusBar
         barStyle="light-content"
         hidden={false}
-        backgroundColor="#000"
+        backgroundColor="#1d1f31"
         translucent={false}
         networkActivityIndicatorVisible={true}
       />

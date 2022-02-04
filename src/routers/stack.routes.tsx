@@ -18,7 +18,7 @@ const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();
 export function StackRouters() {
   return (
     <Navigator
-      initialRouteName="Home"
+      initialRouteName="SplashPage"
       screenOptions={{
         headerShown: true,
       }}

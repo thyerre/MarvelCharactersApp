@@ -2,10 +2,14 @@ import styled from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #181a20;
+  background-color: #1d1f31;
 `;
 
-export const ContentHeader = styled.View`
+export const ContentSearch = styled.View`
+  height: 60px;
+`;
+
+export const ContentCard = styled.View`
   height: 250px;
   padding: 20px 0px;
 `;

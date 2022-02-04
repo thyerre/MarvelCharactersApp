@@ -13,7 +13,7 @@ export const AvengersProvider = (props: any) => {
   }
 
   useEffect(() => {
-    // getAllAvengers();
+    getAllAvengers();
   }, []);
 
   return (

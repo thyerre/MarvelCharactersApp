@@ -1,8 +1,10 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { StatusBar, TouchableOpacity } from 'react-native';
+
 import { ListCard } from '../../components/ListCard';
-import { Container, ContentHeader, TextTeste } from './styles';
+import { Container, ContentCard, ContentSearch, TextTeste } from './styles';
+import { Search } from '../../components/Search';
 
 export function Home() {
   const navigation = useNavigation();
@@ -15,14 +17,17 @@ export function Home() {
       <StatusBar
         barStyle="light-content"
         hidden={false}
-        backgroundColor="#181a20"
+        backgroundColor="#1d1f31"
         translucent={false}
         networkActivityIndicatorVisible={true}
       />
+      <ContentSearch>
+        <Search placeholder="Search" placeholderTextColor="#b1b1b1" />
+      </ContentSearch>
 
-      <ContentHeader>
+      <ContentCard>
         <ListCard />
-      </ContentHeader>
+      </ContentCard>
 
       <TouchableOpacity onPress={handleNavigateToDetail}>
         <TextTeste>Home</TextTeste>
