@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { Avenger } from '../../interfaces';
 
 import {
   ContainerItem,
@@ -12,7 +13,11 @@ import {
   TextName,
 } from './styles';
 
-export function Character() {
+interface CharacterProps {
+  avenger: Avenger;
+}
+
+export function Character({ avenger }: CharacterProps) {
   function LimitCharacters(text: string, limit: number = 60) {
     return text.substr(0, limit).concat('...');
   }
@@ -23,7 +28,7 @@ export function Character() {
         <ContentImg>
           <ImageCharacter
             source={{
-              uri: 'http://i.annihil.us/u/prod/marvel/i/mg/d/03/58dd080719806.jpg',
+              uri: `${avenger.thumbnail?.path}${avenger.thumbnail?.extension}`,
             }}
           />
         </ContentImg>
