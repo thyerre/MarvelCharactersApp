@@ -1,17 +1,12 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { StatusBar, TouchableOpacity } from 'react-native';
+import { StatusBar } from 'react-native';
 
 import { ListCard } from '../../components/ListCard';
-import { Container, ContentCard, ContentSearch, TextTeste } from './styles';
+import { Container, ContentCard, ContentList, ContentSearch } from './styles';
 import { Search } from '../../components/Search';
+import { ListCharacters } from '../../components/ListCharacters';
 
 export function Home() {
-  const navigation = useNavigation();
-
-  function handleNavigateToDetail() {
-    navigation.navigate('Detail');
-  }
   return (
     <Container>
       <StatusBar
@@ -29,9 +24,9 @@ export function Home() {
         <ListCard />
       </ContentCard>
 
-      <TouchableOpacity onPress={handleNavigateToDetail}>
-        <TextTeste>Home</TextTeste>
-      </TouchableOpacity>
+      <ContentList>
+        <ListCharacters />
+      </ContentList>
     </Container>
   );
 }

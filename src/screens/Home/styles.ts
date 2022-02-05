@@ -14,6 +14,10 @@ export const ContentCard = styled.View`
   padding: 20px 0px;
 `;
 
+export const ContentList = styled.View`
+  flex: 1;
+`;
+
 export const TextTeste = styled.Text`
   color: #fff;
   font-weight: bold;
