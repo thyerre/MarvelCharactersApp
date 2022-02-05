@@ -1,18 +1,22 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { FlatList } from 'react-native';
 
 import { Card } from '../Card';
 import { ContainerList } from './styles';
 
 export function ListCard() {
+  const banners = ['banner01', 'banner02', 'banner03', 'banner04'];
+  const renderItem = ({ item }: any) => <Card image={item} key={item} />;
+
   return (
     <ContainerList>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <Card image="banner01" />
-        <Card image="banner02" />
-        <Card image="banner03" />
-        <Card image="banner04" />
-      </ScrollView>
+      <FlatList
+        horizontal
+        data={banners}
+        renderItem={renderItem}
+        keyExtractor={(item: any) => item}
+        showsVerticalScrollIndicator={false}
+      />
     </ContainerList>
   );
 }
