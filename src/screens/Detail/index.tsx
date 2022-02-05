@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { GalleryList } from '../../components/GalleryList';
+import { ModalEdit } from '../../components/ModalEdit';
 import { getComicsByIdCharacter } from '../../service';
 
 import {
@@ -36,6 +37,7 @@ export function Detail({ route }: any) {
 
   return (
     <ContainerDetail>
+      <ModalEdit visible={true} />
       <ContentIconEdit>
         <ButtonEdit>
           <Icon name="edit" size={20} color="#0f131b" />
