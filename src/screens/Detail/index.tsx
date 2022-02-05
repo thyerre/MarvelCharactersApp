@@ -1,12 +1,16 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import { GalleryList } from '../../components/GalleryList';
 import { getComicsByIdCharacter } from '../../service';
 
 import {
+  ButtonEdit,
   ContainerDetail,
   ContentGallery,
+  ContentIconEdit,
   ContentImg,
   ContentInfo,
   ImageCharacter,
@@ -32,6 +36,11 @@ export function Detail({ route }: any) {
 
   return (
     <ContainerDetail>
+      <ContentIconEdit>
+        <ButtonEdit>
+          <Icon name="edit" size={20} color="#0f131b" />
+        </ButtonEdit>
+      </ContentIconEdit>
       <ContentImg>
         <ImageCharacter
           source={{

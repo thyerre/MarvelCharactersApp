@@ -13,6 +13,20 @@ export const ContentImg = styled.View`
   justify-content: center;
 `;
 
+export const ContentIconEdit = styled.View`
+  width: 100%;
+  align-items: flex-end;
+`;
+
+export const ButtonEdit = styled.TouchableOpacity`
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: #b1b1b1;
+`;
+
 export const ContentInfo = styled.View`
   width: 100%;
   margin-top: 20px;
