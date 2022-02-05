@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { GalleryItem } from '../GalleryItem';
 import { ContainerGallery, GalleryTitle } from './styles';
 
@@ -13,17 +14,19 @@ export function GalleryList({ items, title }: GalleryProps) {
   );
 
   return (
-    <>
-      <GalleryTitle>{title}</GalleryTitle>
+    <View>
       {items.length > 0 ? (
-        <ContainerGallery
-          horizontal
-          data={items}
-          renderItem={renderItem}
-          keyExtractor={(avenger: any) => avenger.id}
-          showsVerticalScrollIndicator={false}
-        />
+        <>
+          <GalleryTitle>{title}</GalleryTitle>
+          <ContainerGallery
+            horizontal
+            data={items}
+            renderItem={renderItem}
+            keyExtractor={(avenger: any) => avenger.id}
+            showsVerticalScrollIndicator={false}
+          />
+        </>
       ) : null}
-    </>
+    </View>
   );
 }
