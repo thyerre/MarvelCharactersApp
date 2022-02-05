@@ -17,7 +17,10 @@ export function Home() {
         networkActivityIndicatorVisible={true}
       />
       <ContentSearch>
-        <Search placeholder="Search" placeholderTextColor="#b1b1b1" />
+        <Search
+          placeholder="Search characters"
+          placeholderTextColor="#b1b1b1"
+        />
       </ContentSearch>
 
       <ContentCard>

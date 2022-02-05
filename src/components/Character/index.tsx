@@ -19,6 +19,9 @@ interface CharacterProps {
 
 export function Character({ avenger }: CharacterProps) {
   function LimitCharacters(text: string, limit: number = 60) {
+    if (!text) {
+      return 'No description';
+    }
     return text.substr(0, limit).concat('...');
   }
 
@@ -28,17 +31,15 @@ export function Character({ avenger }: CharacterProps) {
         <ContentImg>
           <ImageCharacter
             source={{
-              uri: `${avenger.thumbnail?.path}${avenger.thumbnail?.extension}`,
+              uri: `${avenger.thumbnail.path}.${avenger.thumbnail.extension}`,
             }}
           />
         </ContentImg>
         <ContentCenter>
           <ContentText>
-            <TextName>TRESTE</TextName>
+            <TextName>{avenger.name}</TextName>
             <TextDescription>
-              {LimitCharacters(
-                'asdsa dsada dqwdaasd as dsa sd asd sad sa dsad asd sad sa dsadsad sad s sad sada sdsadsadsadsadsadsa asd as da sd ada sdasdsad ad sa dsad  s dadw dasd',
-              )}
+              {LimitCharacters(avenger.description)}
             </TextDescription>
           </ContentText>
         </ContentCenter>
