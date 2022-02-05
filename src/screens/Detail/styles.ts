@@ -15,7 +15,6 @@ export const ContentImg = styled.View`
 
 export const ContentInfo = styled.View`
   width: 100%;
-  height: 200px;
   margin-top: 20px;
   align-items: center;
 `;

@@ -36,7 +36,6 @@ export function Search({ placeholder, placeholderTextColor }: SearchProps) {
         placeholder={placeholder}
         placeholderTextColor={placeholderTextColor}
         onChangeText={(text: string) => setTextSearch(text)}
-        value={search}
       />
       <ButtonSearch onPress={handleFindCharacters}>
         <Icon name="search" size={30} color="#0f131b" />

@@ -32,7 +32,9 @@ export function Detail({ route }: any) {
         <TextTitle>Name</TextTitle>
         <TextName>{avenger.name}</TextName>
         <TextTitle>Description</TextTitle>
-        <TextDescription>{avenger.description}</TextDescription>
+        <TextDescription>
+          {avenger.description ? avenger.description : 'No description'}
+        </TextDescription>
       </ContentInfo>
     </ContainerDetail>
   );
