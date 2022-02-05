@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ButtonSearch, ContainerSearch, Input } from './styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useAvengers } from '../../hooks/useAvengers';
-import { getAvengers } from '../../service';
+import { getCharacters } from '../../service';
 import { Keyboard } from 'react-native';
 
 interface SearchProps {
@@ -17,7 +17,7 @@ export function Search({ placeholder, placeholderTextColor }: SearchProps) {
   async function handleFindCharacters() {
     Keyboard.dismiss();
     if (search) {
-      const avengers = await getAvengers({ nameStartsWith: search });
+      const avengers = await getCharacters({ nameStartsWith: search });
       setAvengers(avengers);
     }
   }
@@ -25,7 +25,7 @@ export function Search({ placeholder, placeholderTextColor }: SearchProps) {
   async function setTextSearch(text: string) {
     setSearch(text);
     if (!text) {
-      const avengers = await getAvengers();
+      const avengers = await getCharacters();
       setAvengers(avengers);
     }
   }

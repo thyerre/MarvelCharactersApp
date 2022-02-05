@@ -1,8 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { GalleryList } from '../../components/GalleryList';
+import { getComicsByIdCharacter } from '../../service';
 
 import {
   ContainerDetail,
+  ContentGallery,
   ContentImg,
   ContentInfo,
   ImageCharacter,
@@ -13,10 +17,17 @@ import {
 
 export function Detail({ route }: any) {
   const navigation = useNavigation();
+  const [comics, setComics] = useState<any[]>([]);
   const { avenger } = route.params;
+
+  async function findComics(id: number) {
+    const list = await getComicsByIdCharacter(id);
+    setComics(list);
+  }
 
   useEffect(() => {
     navigation.setOptions({ title: avenger.name });
+    findComics(avenger.id);
   }, []);
 
   return (
@@ -36,6 +47,9 @@ export function Detail({ route }: any) {
           {avenger.description ? avenger.description : 'No description'}
         </TextDescription>
       </ContentInfo>
+      <ContentGallery>
+        <GalleryList items={comics} title="Comics" />
+      </ContentGallery>
     </ContainerDetail>
   );
 }

@@ -41,3 +41,7 @@ export const TextTitle = styled.Text`
   font-size: 14px;
   margin-top: 10px;
 `;
+
+export const ContentGallery = styled.View`
+  flex: 1;
+`;

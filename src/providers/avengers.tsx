@@ -1,6 +1,6 @@
 import React, { createContext, useEffect } from 'react';
 import { useState } from 'react';
-import { getAvengers } from '../service';
+import { getCharacters } from '../service';
 
 export const AvengersContext = createContext({} as any);
 
@@ -8,7 +8,7 @@ export const AvengersProvider = (props: any) => {
   const [avengers, setAvengers] = useState({});
 
   async function getAllAvengers() {
-    const avengersList = await getAvengers();
+    const avengersList = await getCharacters();
     setAvengers(avengersList);
   }
 
