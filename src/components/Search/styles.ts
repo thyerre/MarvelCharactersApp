@@ -6,6 +6,7 @@ export const Input = styled.TextInput`
   background-color: #0f131b;
   padding: 0px 20px;
   border-radius: 15px;
+  color: #fff;
 `;
 
 export const ContainerSearch = styled.View`

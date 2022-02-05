@@ -1,7 +1,9 @@
 import React from 'react';
 import { FlatList } from 'react-native';
+
 import { useAvengers } from '../../hooks/useAvengers';
 import { Character } from '../Character';
+import { CharactersNotFound } from '../CharactersNotFound';
 import { ContainerList } from './styles';
 
 export function ListCharacters() {
@@ -13,12 +15,16 @@ export function ListCharacters() {
 
   return (
     <ContainerList>
-      <FlatList
-        data={avengers}
-        renderItem={renderItem}
-        keyExtractor={(avenger: any) => avenger.id}
-        showsVerticalScrollIndicator={false}
-      />
+      {avengers.length > 0 ? (
+        <FlatList
+          data={avengers}
+          renderItem={renderItem}
+          keyExtractor={(avenger: any) => avenger.id}
+          showsVerticalScrollIndicator={false}
+        />
+      ) : (
+        <CharactersNotFound />
+      )}
     </ContainerList>
   );
 }
