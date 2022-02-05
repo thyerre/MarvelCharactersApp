@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Avenger } from '../../interfaces';
@@ -18,6 +19,8 @@ interface CharacterProps {
 }
 
 export function Character({ avenger }: CharacterProps) {
+  const navigation = useNavigation();
+
   function LimitCharacters(text: string, limit: number = 60) {
     if (!text) {
       return 'No description';
@@ -27,7 +30,7 @@ export function Character({ avenger }: CharacterProps) {
 
   return (
     <ContainerItem>
-      <Content>
+      <Content onPress={() => navigation.navigate('Detail', { avenger })}>
         <ContentImg>
           <ImageCharacter
             source={{

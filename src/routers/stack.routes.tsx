@@ -5,11 +5,12 @@ import { Home } from '../screens/Home';
 import { Detail } from '../screens/Detail';
 import { Alter } from '../screens/Alter';
 import { SplashPage } from '../screens/SplashPage';
+import { Avenger } from '../interfaces';
 
 type RootStackParamList = {
   Home: undefined;
   SplashPage: undefined;
-  Detail: { id: string };
+  Detail: { avenger: Avenger };
   Alter: { id: string };
 };
 
@@ -29,7 +30,20 @@ export function StackRouters() {
         options={{ headerShown: false }}
       />
       <Screen name="Home" component={Home} options={{ headerShown: false }} />
-      <Screen name="Detail" component={Detail} />
+      <Screen
+        name="Detail"
+        component={Detail}
+        options={{
+          title: 'Detail',
+          headerStyle: {
+            backgroundColor: '#1d1f31',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: '400',
+          },
+        }}
+      />
       <Screen name="Alter" component={Alter} />
     </Navigator>
   );
