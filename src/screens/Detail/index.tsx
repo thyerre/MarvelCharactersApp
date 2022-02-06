@@ -1,11 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useState } from 'react';
+import { Alert, RefreshControl } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { GalleryList } from '../../components/GalleryList';
 import { ModalEdit } from '../../components/ModalEdit';
 import { getComicsByIdCharacter } from '../../service';
+import { TextTeste } from '../Home/styles';
 
 import {
   ButtonEdit,
@@ -15,6 +17,7 @@ import {
   ContentImg,
   ContentInfo,
   ImageCharacter,
+  Modal,
   TextDescription,
   TextName,
   TextTitle,
@@ -22,8 +25,16 @@ import {
 
 export function Detail({ route }: any) {
   const navigation = useNavigation();
+  const [refreshing, setRefreshing] = useState(false);
+  const [modalVisible, setModalVisible] = useState(true);
   const [comics, setComics] = useState<any[]>([]);
   const { avenger } = route.params;
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setComics([]);
+    findComics(avenger.id);
+    setTimeout(() => setRefreshing(false), 2000);
+  }, []);
 
   async function findComics(id: number) {
     const list = await getComicsByIdCharacter(id);
@@ -35,9 +46,13 @@ export function Detail({ route }: any) {
     findComics(avenger.id);
   }, []);
 
+
   return (
-    <ContainerDetail>
-      <ModalEdit visible={true} />
+    <ContainerDetail
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
+    >
       <ContentIconEdit>
         <ButtonEdit>
           <Icon name="edit" size={20} color="#0f131b" />
