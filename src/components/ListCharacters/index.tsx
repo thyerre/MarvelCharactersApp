@@ -10,7 +10,7 @@ export function ListCharacters() {
   const { marvelCharacters } = useAvengers();
 
   const renderItem = (item: any) => (
-    <Character avenger={item.item} key={item.id} />
+    <Character marvelCharacter={item.item} key={item.id} />
   );
 
   return (

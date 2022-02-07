@@ -25,11 +25,11 @@ export function Detail({ route }: any) {
   const [refreshing, setRefreshing] = useState(false);
   const [comics, setComics] = useState<any[]>([]);
 
-  const { avenger } = route.params;
+  const { marvelCharacter } = route.params;
   const onRefresh = useCallback(() => {
     setRefreshing(true);
     setComics([]);
-    findComics(avenger.id);
+    findComics(marvelCharacter.id);
     setTimeout(() => setRefreshing(false), 2000);
   }, []);
 
@@ -39,8 +39,8 @@ export function Detail({ route }: any) {
   }
 
   useEffect(() => {
-    navigation.setOptions({ title: avenger.name });
-    findComics(avenger.id);
+    navigation.setOptions({ title: marvelCharacter.name });
+    findComics(marvelCharacter.id);
   }, []);
 
   return (
@@ -50,23 +50,27 @@ export function Detail({ route }: any) {
       }
     >
       <ContentIconEdit>
-        <ButtonEdit onPress={() => navigation.navigate('Edit', avenger)}>
+        <ButtonEdit
+          onPress={() => navigation.navigate('Edit', marvelCharacter)}
+        >
           <Icon name="edit" size={20} color="#0f131b" />
         </ButtonEdit>
       </ContentIconEdit>
       <ContentImg>
         <ImageCharacter
           source={{
-            uri: `${avenger.thumbnail.path}.${avenger.thumbnail.extension}`,
+            uri: `${marvelCharacter.thumbnail.path}.${marvelCharacter.thumbnail.extension}`,
           }}
         />
       </ContentImg>
       <ContentInfo>
         <TextTitle>Name</TextTitle>
-        <TextName>{avenger.name}</TextName>
+        <TextName>{marvelCharacter.name}</TextName>
         <TextTitle>Description</TextTitle>
         <TextDescription>
-          {avenger.description ? avenger.description : 'No description'}
+          {marvelCharacter.description
+            ? marvelCharacter.description
+            : 'No description'}
         </TextDescription>
       </ContentInfo>
       <ContentGallery>
