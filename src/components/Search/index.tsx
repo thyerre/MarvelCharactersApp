@@ -17,16 +17,16 @@ export function Search({ placeholder, placeholderTextColor }: SearchProps) {
   async function handleFindCharacters() {
     Keyboard.dismiss();
     if (search) {
-      const avengers = await getCharacters({ nameStartsWith: search });
-      setAvengers(avengers);
+      const marvelCharacters = await getCharacters({ nameStartsWith: search });
+      setAvengers(marvelCharacters);
     }
   }
 
   async function setTextSearch(text: string) {
     setSearch(text);
     if (!text) {
-      const avengers = await getCharacters();
-      setAvengers(avengers);
+      const marvelCharacters = await getCharacters();
+      setAvengers(marvelCharacters);
     }
   }
 

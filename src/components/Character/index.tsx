@@ -15,10 +15,10 @@ import {
 } from './styles';
 
 interface CharacterProps {
-  avenger: MarvelCharacter;
+  marvelCharacter: MarvelCharacter;
 }
 
-export function Character({ avenger }: CharacterProps) {
+export function Character({ marvelCharacter }: CharacterProps) {
   const navigation = useNavigation();
 
   function LimitCharacters(text: string, limit: number = 60) {
@@ -30,19 +30,21 @@ export function Character({ avenger }: CharacterProps) {
 
   return (
     <ContainerItem>
-      <Content onPress={() => navigation.navigate('Detail', { avenger })}>
+      <Content
+        onPress={() => navigation.navigate('Detail', { marvelCharacter })}
+      >
         <ContentImg>
           <ImageCharacter
             source={{
-              uri: `${avenger.thumbnail.path}.${avenger.thumbnail.extension}`,
+              uri: `${marvelCharacter.thumbnail.path}.${marvelCharacter.thumbnail.extension}`,
             }}
           />
         </ContentImg>
         <ContentCenter>
           <ContentText>
-            <TextName>{avenger.name}</TextName>
+            <TextName>{marvelCharacter.name}</TextName>
             <TextDescription>
-              {LimitCharacters(avenger.description)}
+              {LimitCharacters(marvelCharacter.description)}
             </TextDescription>
           </ContentText>
         </ContentCenter>

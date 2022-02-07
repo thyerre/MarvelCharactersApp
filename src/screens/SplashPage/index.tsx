@@ -6,14 +6,14 @@ import { useAvengers } from '../../hooks/useAvengers';
 import { ImageLogo, SplashContainer } from './styles';
 
 export function SplashPage() {
-  const { avengers } = useAvengers();
+  const { marvelCharacters } = useAvengers();
   const navigation = useNavigation();
 
   useEffect(() => {
-    if (avengers.length > 0) {
+    if (marvelCharacters.length > 0) {
       navigation.navigate('Home');
     }
-  }, [avengers]);
+  }, [marvelCharacters]);
 
   return (
     <SplashContainer>

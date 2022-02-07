@@ -2,14 +2,14 @@ import React, { createContext, useEffect } from 'react';
 import { useState } from 'react';
 import { getCharacters } from '../service';
 
-export const AvengersContext = createContext({} as any);
+export const MarvelCharacterContext = createContext({} as any);
 
 export const AvengersProvider = (props: any) => {
-  const [avengers, setAvengers] = useState({});
+  const [marvelCharacters, setMarvelCharacters] = useState({});
 
   async function getAllAvengers() {
-    const avengersList = await getCharacters();
-    setAvengers(avengersList);
+    const marvelCharacterList = await getCharacters();
+    setMarvelCharacters(marvelCharacterList);
   }
 
   useEffect(() => {
@@ -17,8 +17,10 @@ export const AvengersProvider = (props: any) => {
   }, []);
 
   return (
-    <AvengersContext.Provider value={{ avengers, setAvengers }}>
+    <MarvelCharacterContext.Provider
+      value={{ marvelCharacters, setMarvelCharacters }}
+    >
       {props.children}
-    </AvengersContext.Provider>
+    </MarvelCharacterContext.Provider>
   );
 };

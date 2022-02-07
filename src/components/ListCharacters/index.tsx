@@ -7,17 +7,17 @@ import { CharactersNotFound } from '../CharactersNotFound';
 import { ContainerList } from './styles';
 
 export function ListCharacters() {
-  const { avengers } = useAvengers();
+  const { marvelCharacters } = useAvengers();
 
-  const renderItem = (avenger: any) => (
-    <Character avenger={avenger.item} key={avenger.id} />
+  const renderItem = (item: any) => (
+    <Character avenger={item.item} key={item.id} />
   );
 
   return (
     <ContainerList>
-      {avengers.length > 0 ? (
+      {marvelCharacters.length > 0 ? (
         <FlatList
-          data={avengers}
+          data={marvelCharacters}
           renderItem={renderItem}
           keyExtractor={(avenger: any) => avenger.id}
           showsVerticalScrollIndicator={false}
