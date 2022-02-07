@@ -1,4 +1,4 @@
-export interface Avenger {
+export interface MarvelCharacter {
   name: string;
   id: number;
   thumbnail: Thumbnail;

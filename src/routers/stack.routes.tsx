@@ -8,13 +8,13 @@ import { Home } from '../screens/Home';
 import { Detail } from '../screens/Detail';
 import { Edit } from '../screens/Edit';
 import { SplashPage } from '../screens/SplashPage';
-import { Avenger } from '../interfaces';
+import { MarvelCharacter } from '../interfaces';
 
 type RootStackParamList = {
   Home: undefined;
   SplashPage: undefined;
-  Detail: { avenger: Avenger };
-  Edit: { avenger: Avenger };
+  Detail: { marvelCharacter: MarvelCharacter };
+  Edit: { marvelCharacter: MarvelCharacter };
 };
 
 const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();

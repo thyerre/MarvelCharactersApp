@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Avenger } from '../../interfaces';
+import { MarvelCharacter } from '../../interfaces';
 
 import {
   ContainerItem,
@@ -15,7 +15,7 @@ import {
 } from './styles';
 
 interface CharacterProps {
-  avenger: Avenger;
+  avenger: MarvelCharacter;
 }
 
 export function Character({ avenger }: CharacterProps) {
