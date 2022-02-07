@@ -6,11 +6,11 @@ import { Container } from '../Detail/styles';
 export function Edit({ route }: any) {
   const navigation = useNavigation();
 
-  const { avenger } = route.params;
+  const { marvelCharacter } = route.params;
 
   useEffect(() => {
-	console.log(avenger);
-    // navigation.setOptions({ title: avenger.name });
+    console.log(marvelCharacter);
+    navigation.setOptions({ title: marvelCharacter.name });
   }, []);
 
   return (

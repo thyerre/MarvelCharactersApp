@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
 
-import { useAvengers } from '../../hooks/useAvengers';
+import { useMarvelCharacters } from '../../hooks/useMarvelCharacters';
 import { ImageLogo, SplashContainer } from './styles';
 
 export function SplashPage() {
-  const { marvelCharacters } = useAvengers();
+  const { marvelCharacters } = useMarvelCharacters();
   const navigation = useNavigation();
 
   useEffect(() => {

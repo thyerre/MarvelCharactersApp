@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ButtonSearch, ContainerSearch, Input } from './styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { useAvengers } from '../../hooks/useAvengers';
+import { useMarvelCharacters } from '../../hooks/useMarvelCharacters';
 import { getCharacters } from '../../service';
 import { Keyboard } from 'react-native';
 
@@ -12,13 +12,13 @@ interface SearchProps {
 
 export function Search({ placeholder, placeholderTextColor }: SearchProps) {
   const [search, setSearch] = useState<string>();
-  const { setAvengers } = useAvengers();
+  const { setMarvelCharacters } = useMarvelCharacters();
 
   async function handleFindCharacters() {
     Keyboard.dismiss();
     if (search) {
       const marvelCharacters = await getCharacters({ nameStartsWith: search });
-      setAvengers(marvelCharacters);
+      setMarvelCharacters(marvelCharacters);
     }
   }
 
@@ -26,7 +26,7 @@ export function Search({ placeholder, placeholderTextColor }: SearchProps) {
     setSearch(text);
     if (!text) {
       const marvelCharacters = await getCharacters();
-      setAvengers(marvelCharacters);
+      setMarvelCharacters(marvelCharacters);
     }
   }
 

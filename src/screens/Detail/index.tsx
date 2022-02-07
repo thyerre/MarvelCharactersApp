@@ -51,7 +51,7 @@ export function Detail({ route }: any) {
     >
       <ContentIconEdit>
         <ButtonEdit
-          onPress={() => navigation.navigate('Edit', marvelCharacter)}
+          onPress={() => navigation.navigate('Edit', { marvelCharacter })}
         >
           <Icon name="edit" size={20} color="#0f131b" />
         </ButtonEdit>

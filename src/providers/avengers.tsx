@@ -4,16 +4,16 @@ import { getCharacters } from '../service';
 
 export const MarvelCharacterContext = createContext({} as any);
 
-export const AvengersProvider = (props: any) => {
+export const MarvelCharacterProvider = (props: any) => {
   const [marvelCharacters, setMarvelCharacters] = useState({});
 
-  async function getAllAvengers() {
+  async function getAllMarvelCharacters() {
     const marvelCharacterList = await getCharacters();
     setMarvelCharacters(marvelCharacterList);
   }
 
   useEffect(() => {
-    getAllAvengers();
+    getAllMarvelCharacters();
   }, []);
 
   return (

@@ -1,13 +1,13 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 
-import { useAvengers } from '../../hooks/useAvengers';
+import { useMarvelCharacters } from '../../hooks/useMarvelCharacters';
 import { Character } from '../Character';
 import { CharactersNotFound } from '../CharactersNotFound';
 import { ContainerList } from './styles';
 
 export function ListCharacters() {
-  const { marvelCharacters } = useAvengers();
+  const { marvelCharacters } = useMarvelCharacters();
 
   const renderItem = (item: any) => (
     <Character marvelCharacter={item.item} key={item.id} />
