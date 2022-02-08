@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { ActivityIndicator, FlatList } from 'react-native';
 
 import { useMarvelCharacters } from '../../hooks/useMarvelCharacters';
 import { Character } from '../Character';
@@ -7,7 +7,7 @@ import { CharactersNotFound } from '../CharactersNotFound';
 import { ContainerList } from './styles';
 
 export function ListCharacters() {
-  const { marvelCharacters } = useMarvelCharacters();
+  const { marvelCharacters, loader } = useMarvelCharacters();
 
   const renderItem = (item: any) => (
     <Character marvelCharacter={item.item} key={item.id} />
@@ -15,7 +15,8 @@ export function ListCharacters() {
 
   return (
     <ContainerList>
-      {marvelCharacters.length > 0 ? (
+      {loader ? <ActivityIndicator size="large" /> : null}
+      {marvelCharacters.length > 0 || loader ? (
         <FlatList
           data={marvelCharacters}
           renderItem={renderItem}

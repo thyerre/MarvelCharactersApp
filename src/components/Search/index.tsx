@@ -13,13 +13,16 @@ interface SearchProps {
 
 export function Search({ placeholder, placeholderTextColor }: SearchProps) {
   const [search, setSearch] = useState<string>();
-  const { setMarvelCharacters } = useMarvelCharacters();
+  const { setMarvelCharacters, setLoader } = useMarvelCharacters();
 
   async function handleFindCharacters() {
     Keyboard.dismiss();
     if (search) {
+      setLoader(true);
+      setMarvelCharacters([]);
       const marvelCharacters = await getCharacters({ nameStartsWith: search });
       setMarvelCharacters(marvelCharacters);
+      setLoader(false);
     }
   }
 
@@ -37,6 +40,7 @@ export function Search({ placeholder, placeholderTextColor }: SearchProps) {
         placeholder={placeholder}
         placeholderTextColor={placeholderTextColor}
         onChangeText={(text: string) => setTextSearch(text)}
+        onSubmitEditing={handleFindCharacters}
       />
       <ButtonSearch onPress={handleFindCharacters}>
         <Icon name="search" size={30} color="#0f131b" />
