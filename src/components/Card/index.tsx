@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { CardView, ImageCard } from './styles';
 
 interface CardProps {

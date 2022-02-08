@@ -6,7 +6,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { GalleryList } from '../../components/GalleryList';
 import { getComicsByIdCharacter } from '../../service';
-
 import {
   ButtonEdit,
   Container,

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ContainerGalleryItem, GalleryImg } from './styles';
 
 interface GalleryProps {

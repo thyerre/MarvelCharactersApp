@@ -2,9 +2,9 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 
 import { ListCard } from '../../components/ListCard';
-import { Container, ContentCard, ContentList, ContentSearch } from './styles';
 import { Search } from '../../components/Search';
 import { ListCharacters } from '../../components/ListCharacters';
+import { Container, ContentCard, ContentList, ContentSearch } from './styles';
 
 export function Home() {
   return (

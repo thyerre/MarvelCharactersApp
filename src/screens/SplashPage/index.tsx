@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { useMarvelCharacters } from '../../hooks/useMarvelCharacters';
 import { ImageLogo, SplashContainer } from './styles';

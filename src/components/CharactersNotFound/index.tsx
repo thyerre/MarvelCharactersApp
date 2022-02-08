@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Content, ImageNotFound, TextNotFound } from './styles';
 
 export function CharactersNotFound() {

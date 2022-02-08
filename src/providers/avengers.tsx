@@ -1,5 +1,5 @@
-import React, { createContext, useEffect } from 'react';
-import { useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+
 import { getCharacters } from '../service';
 
 export const MarvelCharacterContext = createContext({} as any);

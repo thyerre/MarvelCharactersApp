@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ButtonSearch, ContainerSearch, Input } from './styles';
+import { Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import { useMarvelCharacters } from '../../hooks/useMarvelCharacters';
 import { getCharacters } from '../../service';
-import { Keyboard } from 'react-native';
+import { ButtonSearch, ContainerSearch, Input } from './styles';
 
 interface SearchProps {
   placeholder: string;
