@@ -1,9 +1,10 @@
 import React from 'react';
+import { Gallery } from '../../interfaces';
 
 import { ContainerGalleryItem, GalleryImg } from './styles';
 
 interface GalleryProps {
-  item: any;
+  item: Gallery;
 }
 
 export function GalleryItem({ item }: GalleryProps) {

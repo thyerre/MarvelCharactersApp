@@ -21,7 +21,7 @@ import {
 
 export function Detail({ route }: any) {
   const navigation = useNavigation();
-  const [refreshing, setRefreshing] = useState(false);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
   const [comics, setComics] = useState<any[]>([]);
 
   const { marvelCharacter } = route.params;

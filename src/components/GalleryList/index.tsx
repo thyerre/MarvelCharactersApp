@@ -1,11 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
+import { Gallery } from '../../interfaces';
 
 import { GalleryItem } from '../GalleryItem';
 import { ContainerGallery, GalleryTitle } from './styles';
 
 interface GalleryProps {
-  items: any[];
+  items: Gallery[];
   title: string;
 }
 

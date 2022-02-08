@@ -9,7 +9,7 @@ export const MarvelCharacterProvider = (props: any) => {
   const [marvelCharacters, setMarvelCharacters] = useState<MarvelCharacter[]>(
     [],
   );
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState<boolean>(false);
 
   async function getAllMarvelCharacters() {
     const marvelCharacterList = await getCharacters();

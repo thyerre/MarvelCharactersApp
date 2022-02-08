@@ -9,3 +9,7 @@ export interface Thumbnail {
   extension: string;
   path: string;
 }
+
+export interface Gallery {
+  thumbnail: Thumbnail;
+}
