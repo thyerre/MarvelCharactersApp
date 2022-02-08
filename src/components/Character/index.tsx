@@ -25,7 +25,12 @@ export function Character({ marvelCharacter }: CharacterProps) {
     if (!text) {
       return 'No description';
     }
-    return text.substr(0, limit).concat('...');
+
+    if (text.length > limit) {
+      return text.substr(0, limit).concat('...');
+    }
+
+    return text;
   }
 
   return (
