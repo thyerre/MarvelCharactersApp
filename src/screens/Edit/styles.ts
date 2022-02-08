@@ -38,3 +38,10 @@ export const TextArea = styled.TextInput`
   border-radius: 15px;
   color: #fff;
 `;
+
+export const Error = styled.Text`
+  margin-left: 10px;
+  font-size: 11px;
+  margin-top: 3px;
+  color: #eb3223;
+`;
